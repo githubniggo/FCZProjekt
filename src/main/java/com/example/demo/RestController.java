@@ -35,4 +35,8 @@ public class RestController {
         spielerRepository.save(spieler);
         return spieler;
     }
+    @DeleteMapping("/Spieler/{id}")
+    public void deletePlayer(@PathVariable int id){
+
+    }
 }
