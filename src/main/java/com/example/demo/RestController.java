@@ -25,6 +25,7 @@ public class RestController {
 
     @PostMapping("/Spieler")
     public Spieler createPlayer(@RequestBody Spieler spieler) {
+        System.out.println("name" + spieler.getName());
         int newId = GetPlayers().stream()
                 .max((t1,t2) -> Integer.compare(t1.getId(), t2.getId()))
                 .get()
