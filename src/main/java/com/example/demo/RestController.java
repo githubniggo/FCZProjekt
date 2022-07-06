@@ -1,8 +1,12 @@
 package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.core.CrudMethods;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.StreamSupport;
 @org.springframework.web.bind.annotation.RestController
 @CrossOrigin("http://localhost:3000")
@@ -37,6 +41,6 @@ public class RestController {
     }
     @DeleteMapping("/Spieler/{id}")
     public void deletePlayer(@PathVariable int id){
-
+        SpielerRepository.deleteById(id);
     }
 }
